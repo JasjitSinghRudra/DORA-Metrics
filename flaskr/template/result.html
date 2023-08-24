@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DORA Metrics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .dashboard-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .dashboard-cards {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            border: 2px solid #333;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px;
+            width: 400px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="dashboard-title">DORA Metrics Dashboard</h1>
+
+        <div class="dashboard-cards">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/mean_time_to_recover.png') }}" alt="Mean Time to Recover"/>
+            </div>
+
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/change_failover_rate.png') }}" alt="Change Failover Rate"/>
+            </div>
+        </div>
+
+        <div class="dashboard-cards">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/lead_time_for_changes.png') }}" alt="Lead Time for Changes"/>
+            </div>
+
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/deployment_frequency.png') }}" alt="Deployment Frequency"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
